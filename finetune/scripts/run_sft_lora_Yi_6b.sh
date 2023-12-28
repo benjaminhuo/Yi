@@ -3,14 +3,14 @@
 cd ../sft/
 
 deepspeed main.py \
-	--data_path /DATA_PATH/ \
-	--model_name_or_path /MODEL_PATH/ \
+	--data_path ../kse_sample_dataset/ \
+	--model_name_or_path 01-ai/Yi-6B-Chat \
 	--per_device_train_batch_size 4 \
 	--per_device_eval_batch_size 4 \
 	--max_seq_len 4096 \
 	--learning_rate 2e-6 \
 	--weight_decay 0. \
-	--num_train_epochs 4 \
+	--num_train_epochs 3 \
 	--training_debug_steps 20 \
 	--gradient_accumulation_steps 1 \
 	--lr_scheduler_type cosine \
