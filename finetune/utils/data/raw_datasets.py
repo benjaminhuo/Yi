@@ -164,3 +164,37 @@ class YiDataset(PromptRawDataset):
         if sample["prompt"] is not None and sample["chosen"] is not None:
             return " " + sample["prompt"] + " " + sample["chosen"]
         return None
+
+class KSEDataset(PromptRawDataset):
+    def __init__(self, output_path, seed, local_rank, dataset_name, chat_path):
+        super().__init__(output_path, seed, local_rank, dataset_name)
+        print("data path is {}".format(chat_path))
+        self.dataset_name = "kse"
+        self.dataset_name_clean = "kse"
+        self.raw_datasets = load_dataset(
+            "json",
+            data_files={
+                "train": chat_path + "/data/train.jsonl",
+                "eval": chat_path + "/data/eval.jsonl",
+            },
+        )
+
+    def get_train_data(self):
+        if self.raw_datasets["train"] is not None:
+            return self.raw_datasets["train"]
+        return None
+
+    def get_eval_data(self):
+        if self.raw_datasets["eval"] is not None:
+            return self.raw_datasets["eval"]
+        return None
+
+    def get_prompt(self, sample):
+        if sample["prompt"] is not None:
+            return " " + sample["prompt"]
+        return None
+
+    def get_prompt_and_chosen(self, sample):
+        if sample["prompt"] is not None and sample["chosen"] is not None:
+            return " " + sample["prompt"] + " " + sample["chosen"]
+        return None

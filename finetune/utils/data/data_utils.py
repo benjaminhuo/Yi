@@ -57,6 +57,20 @@ def get_raw_dataset(dataset_name, output_path, seed, local_rank):
         return raw_datasets.YiDataset(
             output_path, seed, local_rank, dataset_name, chat_path
         )
+    elif "kse" in dataset_name:
+        chat_path = dataset_name
+        print(os.path.isfile(chat_path + "/data/train.jsonl"))
+        print(os.path.isfile(chat_path + "/data/eval.jsonl"))
+        if not (
+            os.path.isfile(chat_path + "/data/train.jsonl")
+            and os.path.isfile(chat_path + "/data/eval.jsonl")
+        ):
+            raise RuntimeError(
+                "Please check both the train.json and eval.json files in your local directory."
+            )
+        return raw_datasets.KSEDataset(
+            output_path, seed, local_rank, dataset_name, chat_path
+        )
     else:
         raise RuntimeError(
             f"We do not have configs for dataset {dataset_name}, but you can add it by yourself in raw_datasets.py."

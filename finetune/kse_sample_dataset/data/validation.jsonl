@@ -1,0 +1,4 @@
+{"prompt": "Human: 如何在 Whizard 可观测中心里批量启用规则组? Assistant:", "chosen": "在 Whizard 可观测中心里批量禁用规则组的步骤如下：\n1. 以具有 platform-admin 角色的用户登录 KubeSphere 企业版 Web 控制台。\n2. 在页面左上角选择平台管理 > Whizard 可观测中心。\n3. 在左侧导航栏选择监控告警 > 规则组。\n4. 在规则组页面，点击自定义规则组或内置规则组打开规则组列表。\n5. 勾选已禁用的规则组左侧的复选框，然后在规则组列表上方点击启用可批量启用规则组。"}
+{"prompt": "Human: 在 Whizard 可观测中心里查看多集群监控数据有什么前提条件？ Assistant:", "chosen": "在 Whizard 可观测中心里查看多集群监控数据需要满足以下前提条件：\n1. 在 KubeSphere 企业版平台具有 platform-admin 角色\n2. 需要监控的成员集群的 KubeSphere 企业版版本为 v3.3.1 或更高版本，并且已启用 Whizard 可观测中心扩展组件。"}
+{"prompt": "Human: 在 Whizard 可观测中心里编辑规则组信息有什么前提条件？ Assistant:", "chosen": "在 Whizard 可观测中心里编辑规则组需要如下前提条件：\n1. KubeSphere 企业版平台需要启用告警系统扩展组件。\n2. 需要在 KubeSphere 企业版平台具有 platform-admin 角色。"}
+{"prompt": "Human: 如何在 Whizard 可观测中心里删除单个规则组? Assistant:", "chosen": "删除单个规则组步骤如下：\n1. 以具有 platform-admin 角色的用户登录 KubeSphere 企业版 Web 控制台。\n2. 在页面左上角选择平台管理 > Whizard 可观测中心。\n3. 在左侧导航栏选择监控告警 > 规则组。\n4. 在需要删除的规则组右侧点击more，然后在下拉列表中选择删除。\n5. 在删除规则组对话框，输入规则组的名称，然后点击确定。"}
